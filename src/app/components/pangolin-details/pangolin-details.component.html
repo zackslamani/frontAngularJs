@@ -1,0 +1,78 @@
+
+<div style="width: 400px; margin: auto;">
+    <div *ngIf="currentPangolin" class="edit-form">
+      <h4>Pangolin</h4>
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentPangolin.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input
+            type="text"
+            class="form-control"
+            id="age"
+            [(ngModel)]="currentPangolin.age"
+            name="age"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="family">Family</label>
+            <input
+              type="text"
+              class="form-control"
+              id="family"
+              [(ngModel)]="currentPangolin.family"
+              name="family"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="breed">Breed</label>
+            <input
+              type="text"
+              class="form-control"
+              id="breed"
+              [(ngModel)]="currentPangolin.breed"
+              name="breed"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="food">Food</label>
+            <input
+              type="text"
+              class="form-control"
+              id="food"
+              [(ngModel)]="currentPangolin.food"
+              name="food"
+            />
+          </div>
+
+      <button class="badge badge-danger mr-2" (click)="deletePangolin()">
+        Delete
+      </button>
+
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updatePangolin()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+
+    <div *ngIf="!currentPangolin">
+        <br/>
+      <p>Cannot access this Pangolin...</p>
+    </div>
+
+  </div>
